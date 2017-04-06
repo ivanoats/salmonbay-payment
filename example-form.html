@@ -1,0 +1,21 @@
+<form action="https://wt-actual-user.run.webtask.io/salmonbay-pay-button" method="POST">
+
+  <fieldset>
+    <div>
+      <label for="description">Class description:</label><input id="description" name="description" type="text" />
+      <label for="amount">Class price:</label><input id="amount" name="amount" type="text" />
+    </div>
+  </fieldset>
+
+  <div>
+    <script>
+        /* jQuery MaskMoney Plugin 
+        * http://plentz.github.io/jquery-maskmoney/
+        */
+      jQuery(function() {
+          jQuery('#amount').maskMoney();
+      })
+    </script>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_live_J9SALv5854LrMR4ERSUVQAMr" data-name="Salmon Bay Paddle" data-description="Class payment" data-locale="auto" data-panel-label="Buy Now" data-label="Buy Now"></script>
+  </div>
+</form>
