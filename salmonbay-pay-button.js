@@ -6,7 +6,7 @@ module.exports = function (ctx, req, res) {
   console.log(ctx.secrets)
   var amount = Math.round(ctx.body.amount*100)
   var description = ctx.body.description
-  stripe(ctx.secrets.stripeTestSecretKey).charges.create({
+  stripe(ctx.secrets.stripeSecretKey).charges.create({
     amount: amount,
     currency: 'usd',
     source: ctx.body.stripeToken,
