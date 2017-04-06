@@ -4,7 +4,7 @@ module.exports = function (ctx, req, res) {
   var companyName = 'Salmon Bay Paddle'
   console.log(ctx.body)
   console.log(ctx.secrets)
-  var amount = ctx.body.amount*100
+  var amount = Math.round(ctx.body.amount*100)
   var description = ctx.body.description
   stripe(ctx.secrets.stripeTestSecretKey).charges.create({
     amount: amount,
