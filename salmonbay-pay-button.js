@@ -5,7 +5,7 @@ module.exports = function (ctx, req, res) {
   console.log(ctx.body)
   console.log(ctx.secrets)
   var stripCommas = ctx.body.amount.replace(/,/g,'')
-  var amount = Math.round(stripCommas)
+  var amount = Math.round(stripCommas*100)
   var description = ctx.body.description
   stripe(ctx.secrets.stripeSecretKey).charges.create({
     amount: amount,
