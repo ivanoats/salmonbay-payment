@@ -4,6 +4,7 @@ module.exports = function (ctx, req, res) {
   var companyName = 'Salmon Bay Paddle'
   console.log(ctx.body)
   console.log(ctx.secrets)
+  var stripCommas = ctx.body.amount.replace(/,/g,'')
   var amount = Math.round(ctx.body.amount*100)
   var description = ctx.body.description
   stripe(ctx.secrets.stripeSecretKey).charges.create({
